@@ -1,0 +1,7 @@
+﻿@using subDomain.Helpers 
+@using System.Configuration
+@using System.Web.Mvc
+@{    
+    Layout = "~/Views/Shared/_Layout.cshtml";    
+    Layout = Helpers.GetLayout(Request);  
+}
