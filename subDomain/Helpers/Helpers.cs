@@ -24,9 +24,9 @@ namespace subDomain.Helpers
 
             if (url.HostNameType == UriHostNameType.Dns)
             {
-                //string host = "kmbl.localhost";//url.Host; //modied for testing
+                //string host = "mbl.localhost";//url.Host; //modied for testing
                 string host = url.Host;
-                if (host.Split('.').Length > 1)//> 2) //modied for testing kmbl.localhost.com >2
+                if (host.Split('.').Length > 1)//> 2) //modied for testing mbl.localhost.com >2
                 {
                     int lastIndex = host.LastIndexOf(".");
                     int index = host.IndexOf(".");
