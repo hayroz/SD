@@ -1,0 +1,432 @@
+﻿@using Framework.Common
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="~/Content/images/favicon.ico" type="image/ico" />
+    <title>TWS Tracker | </title>
+    <!-- Bootstrap -->
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/bootstrap/dist/css/bootstrap.min.css") rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/font-awesome/css/font-awesome.min.css") rel="stylesheet">
+    <!-- NProgress -->
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/nprogress/nprogress.css") rel="stylesheet">
+    <!-- iCheck -->
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/iCheck/skins/flat/green.css") rel="stylesheet">
+    <!-- PNotify -->
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/pnotify/dist/pnotify.css") rel="stylesheet">
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/pnotify/dist/pnotify.buttons.css") rel="stylesheet">
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/pnotify/dist/pnotify.nonblock.css") rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css") rel="stylesheet">
+    <!-- JQVMap -->
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/jqvmap/dist/jqvmap.min.css") rel="stylesheet" />
+    <!-- bootstrap-daterangepicker -->
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/bootstrap-daterangepicker/daterangepicker.css") rel="stylesheet">
+    <!-- bootstrap-datetimepicker -->
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css") rel="stylesheet">
+    <!-- Animate.css -->
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/animate.css/animate.min.css") rel="stylesheet">
+    <!-- FullCalendar -->
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/fullcalendar/dist/fullcalendar.min.css") rel="stylesheet">
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/fullcalendar/dist/fullcalendar.print.css") rel="stylesheet" media="print">
+    <!-- Ion.RangeSlider -->
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/normalize-css/normalize.css") rel="stylesheet">
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/ion.rangeSlider/css/ion.rangeSlider.css") rel="stylesheet">
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css") rel="stylesheet">
+    <!-- Bootstrap Colorpicker -->
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css") rel="stylesheet">
+    <!-- Cropper -->
+    <link href=@Html.ResolveUrl("~/Scripts/vendors/cropper/dist/cropper.min.css") rel="stylesheet" />
+
+    <!-- Custom Theme Style -->
+    <link href=@Html.ResolveUrl("~/Content/css/custom.min.css") rel="stylesheet" /> <!-- Main-->
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href=@Html.ResolveUrl("index.html") class="site_title"><i class="fa fa-paw"></i> <span>TWS Tracker</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src=@Html.ResolveUrl("~/Content/images/img.jpg") alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Welcome,</span>
+                            <h2>John Doe</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+                    <br />
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>General</h3>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href=@Html.ResolveUrl("~/Campaign/DashBoard/DashBoard")>Dashboard</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/Campaign/DashBoard/DashBoard1")>Dashboard2</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/Campaign/DashBoard/DashBoard2")>Dashboard3</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/form")>General Form</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/form_advanced")>Advanced Components</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/form_validation")>Form Validation</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/form_wizards")>Form Wizard</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/form_upload")>Form Upload</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/form_buttons")>Form Buttons</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/general_elements")>General Elements</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/media_gallery")>Media Gallery</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/typography")>Typography</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/icons")>IconChartss</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/glyphicons")>Glyphicons</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/widgets")>Widgets</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/invoice")>Invoice</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/inbox")>Inbox</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/Campaign/Schedule")>Calendar</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/tables")>Tables</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/tables_dynamic")>Table Dynamic</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href=@Html.ResolveUrl("~/Campaign/Chart/chartjs")>Chart JS</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/Campaign/Chart/chartjs2")>Chart JS2</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/Campaign/Chart/morisjs")>Moris JS</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/Campaign/Chart/echarts")>ECharts</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/Campaign/Chart/other_charts")>Other Charts</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/fixed_sidebar")>Fixed Sidebar</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/fixed_footer")>Fixed Footer</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu_section">
+                            <h3>Live On</h3>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/e_commerce")>E-commerce</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/projects")>Projects</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/project_detail")>Project Detail</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/contacts")>Contacts</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/profile")>Profile</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/page_403")>403 Error</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/page_404")>404 Error</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/page_500")>500 Error</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/plain_page")>Plain Page</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/login")>Login Page</a></li>
+                                        <li><a href=@Html.ResolveUrl("~/user/pages/pricing_tables")>Pricing Tables</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="#level1_1">Level One</a>
+                                        <li>
+                                            <a>Level One<span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li class="sub_menu">
+                                                    <a href=@Html.ResolveUrl("~/user/pages/level2")>Level Two</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#level2_1">Level Two</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#level2_2">Level Two</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#level1_2">Level One</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href=@Html.ResolveUrl("~/user/pages/login")>
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src=@Html.ResolveUrl("~/Content/images/img.jpg") alt="">John Doe
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="javascript:;"> Profile</a></li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="badge bg-red pull-right">50%</span>
+                                            <span>Settings</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="javascript:;">Help</a></li>
+                                    <li><a href=@Html.ResolveUrl("~/user/pages/login")><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+                            <li role="presentation" class="dropdown">
+                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="badge bg-green">6</span>
+                                </a>
+                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src=@Html.ResolveUrl("~/Content/images/img.jpg") alt="Profile Image" /></span>
+                                            <span>
+                                                <span>John Smith</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src=@Html.ResolveUrl("~/Content/images/img.jpg") alt="Profile Image" /></span>
+                                            <span>
+                                                <span>John Smith</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src=@Html.ResolveUrl("~/Content/images/img.jpg") alt="Profile Image" /></span>
+                                            <span>
+                                                <span>John Smith</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    ~/Content/
+                                    <li>
+                                        <a>
+                                            <span class="image"><img src=@Html.ResolveUrl("~/Content/images/img.jpg") alt="Profile Image" /></span>
+                                            <span>
+                                                <span>John Smith</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="text-center">
+                                            <a>
+                                                <strong>See All Alerts</strong>
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            @RenderBody()
+        </div>
+    </div>
+    <!-- /page content -->
+    <!-- footer content -->
+    <footer>
+        <div class="pull-right">
+            Bootstrap Admin Template by <a href="https://google.com">google</a>
+        </div>
+        <div class="clearfix"></div>
+    </footer>
+    <!-- /footer content -->
+    <!-- jQuery -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/jquery/dist/jquery.min.js")></script>
+    <!-- Bootstrap -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/bootstrap/dist/js/bootstrap.min.js")></script>
+    <!-- FastClick -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/fastclick/lib/fastclick.js")></script>
+    <!-- NProgress -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/nprogress/nprogress.js")></script>
+    <!-- Chart.js -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/Chart.js/dist/Chart.min.js")></script>
+    <!-- gauge.js -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/gauge.js/dist/gauge.min.js")></script>
+    <!-- bootstrap-progressbar -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js")></script>
+    <!-- iCheck -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/iCheck/icheck.min.js")></script>
+    <!-- Skycons -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/skycons/skycons.js")></script>
+    <!-- Flot -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/Flot/jquery.flot.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/Flot/jquery.flot.pie.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/Flot/jquery.flot.time.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/Flot/jquery.flot.stack.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/Flot/jquery.flot.resize.js")></script>
+    <!-- Flot plugins -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/flot.orderbars/js/jquery.flot.orderBars.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/flot-spline/js/jquery.flot.spline.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/flot.curvedlines/curvedLines.js")></script>
+    <!-- DateJS -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/DateJS/build/date.js")></script>
+    <!-- JQVMap -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/jqvmap/dist/jquery.vmap.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/jqvmap/dist/maps/jquery.vmap.world.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/jqvmap/dist/maps/jquery.vmap.usa.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js")></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/moment/min/moment.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/bootstrap-daterangepicker/daterangepicker.js")></script>
+    <!-- bootstrap-wysiwyg -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/jquery.hotkeys/jquery.hotkeys.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/google-code-prettify/src/prettify.js")></script>
+    <!-- jQuery Tags Input -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/jquery.tagsinput/src/jquery.tagsinput.js")></script>
+    <!-- Switchery -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/switchery/dist/switchery.min.js")></script>
+    <!-- Select2 -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/select2/dist/js/select2.full.min.js")></script>
+    <!-- Parsley -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/parsleyjs/dist/parsley.min.js")></script>
+    <!-- Autosize -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/autosize/dist/autosize.min.js")></script>
+    <!-- jQuery autocomplete -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js")></script>
+    <!-- starrr -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/starrr/dist/starrr.js")></script>
+    <!-- Datatables -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/datatables.net/js/jquery.dataTables.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/datatables.net-buttons/js/dataTables.buttons.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/datatables.net-buttons/js/buttons.flash.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/datatables.net-buttons/js/buttons.html5.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/datatables.net-buttons/js/buttons.print.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/datatables.net-responsive/js/dataTables.responsive.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/datatables.net-scroller/js/dataTables.scroller.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/jszip/dist/jszip.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/pdfmake/build/pdfmake.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/pdfmake/build/vfs_fonts.js")></script>
+
+    <!-- jQuery Sparklines -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/jquery-sparkline/dist/jquery.sparkline.min.js")></script>
+    <!-- easy-pie-chart -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js")></script>
+    <!-- Dropzone.js -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/dropzone/dist/min/dropzone.min.js")></script>
+    <!-- validator -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/validator/validator.js")></script>
+    <!-- jQuery Smart Wizard -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js")></script>
+    <!-- PNotify -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/pnotify/dist/pnotify.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/pnotify/dist/pnotify.buttons.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/pnotify/dist/pnotify.nonblock.js")></script>
+    <!-- morris.js -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/raphael/raphael.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/morris.js/morris.min.js")></script>
+    <!-- bootstrap-progressbar -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js")></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/moment/min/moment.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/bootstrap-daterangepicker/daterangepicker.js")></script>
+
+    <!-- bootstrap-datetimepicker -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js")></script>
+    <!-- Ion.RangeSlider -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/ion.rangeSlider/js/ion.rangeSlider.min.js")></script>
+    <!-- Bootstrap Colorpicker -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js")></script>
+    <!-- jquery.inputmask -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js")></script>
+    <!-- jQuery Knob -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/jquery-knob/dist/jquery.knob.min.js")></script>
+    <!-- Cropper -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/cropper/dist/cropper.min.js")></script>
+
+    <!-- ECharts -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/echarts/dist/echarts.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/echarts/map/js/world.js")></script>
+
+    <!-- FullCalendar -->
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/moment/min/moment.min.js")></script>
+    <script src=@Html.ResolveUrl("~/Scripts/vendors/fullcalendar/dist/fullcalendar.min.js")></script>
+    <!-- Custom Theme Scripts -->
+    <script src=@Html.ResolveUrl("~/Scripts/custom.min.js")></script>
+
+</body>
+</html>
+
