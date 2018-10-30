@@ -1,0 +1,29 @@
+$(document).ready(function () {
+        $("#submit").click(function (e) {
+            var token = '@Html.Raw(@WebApplication1.Helpers.Helpers.GetAntiForgeryToken())';
+            if ($("#usernameInput").val() == "")
+                alert("Username cannot be empty");
+            else if ($("#passwordInput").val() == "")
+                alert("Password cannot be empty");
+            else {
+                $.ajax({
+                    type: "POST",
+                    url: "/Test/GetSecuredData",
+                    contentType: "application/json; charset=utf-8",
+                    data: '{"userName":"' + $("#usernameInput").val() + '","password":"' + $("#passwordInput").val() + '"}',
+                    dataType: "html",
+                    headers: {
+                        '__RequestVerificationToken': token
+                    },
+                    success: function (result, status, xhr) {
+                        $("#dataDiv").html(result);
+                        window.open(/jobs/,"_blank", "width=900,height=800,scrollbars=yes");
+                    },
+                    error: function (xhr, status, error) {
+                        $("#dataDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                    }
+                });
+            }
+            return false;
+        });
+    });
