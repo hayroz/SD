@@ -1,0 +1,2 @@
+https://www.youtube.com/watch?v=31Ld7Kba_fo
+FIX api-ms-win-downlevel-advapi32-l1-1-0.dll is Missing in Windows 10/8/7 [UPDATED 2018]
